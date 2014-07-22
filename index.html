@@ -1,0 +1,95 @@
+﻿<!DOCTYPE>
+<html>
+<head>
+	<title>Welcome to OExam!</title>
+	<meta http-equiv="content-type" content="text/html";charset="GB2312"/>
+	<meta name="author" content="dennisleung"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+	<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="logo.png">
+	<script src="bootstrap/dist/vendor/jquery.js"></script>
+	<script src="bootstrap/dist/js/bootstrap.min.js"></script>
+	<script>
+		//window.onload=function(){alert(document.body.clientWidth);};	
+		$(document).ready(
+			function(){
+				width = document.body.clientWidth;
+				if(width>800){
+					w = width-600;
+				}
+				else{
+					w = width-50;
+					$("*").css("font-size","15px");
+				}
+				//alert(width);
+				$("#suggestion").css("width",w+"px");
+				$("#suggestion").css("x",parseInt((document.body.clientWidth-w)/2)+"px");
+			});
+	</script>
+</head>
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#"><img src="logo.png" style="width:40px;height:40px">&nbsp;&nbsp;OExam</a>
+			</div>
+		</div>
+	</div>
+
+	<center>
+	<form method="get" action="generate.php">
+	</br></br></br></br>
+	请选择一个出题范围：
+	<select name="range">
+	<option value="0">全书</option>
+	<option value="1">专题一</option>
+	<option value="2">专题二</option>
+	<option value="3">专题三</option>
+	<option value="4">专题四</option>
+	<option value="5">专题五</option>
+	<option value="6">专题六</option>
+	</select>
+	</br>
+	</br>
+	题型：
+	<input type="checkbox" name="smf[]" value="0" checked>单选题&nbsp;&nbsp;
+	<input type="checkbox" name="smf[]" value="1" checked>多选题&nbsp;&nbsp;
+	<!--
+	<input type="checkbox" name="smf[]" value="2" checked>是非题&nbsp;&nbsp;
+	-->
+	</br>
+	</br>
+	题量：
+	<select name="num">
+	<option>10</option>
+	<option>20</option>
+	<option>30</option>
+	<option>40</option>
+	<option>50</option>
+	<option>60</option>
+	<option>70</option>
+	<option>80</option>
+	<option>90</option>
+	<option>100</option>
+	</select>
+	&nbsp;&nbsp;
+	<input type="submit" class="btn btn-primary" value="GO!">
+	</form>
+	</center>
+	</br>
+	</br>
+	<div style="font-size:15px;margin:0 auto;margin-bottom:120px;" id="suggestion">
+	To 挣扎在及格线的各位：</br>
+	这个平台是脑洞和血泪的产物。题库是自己录入的（与《指导》有点出入，找不到《指导》的电子书），可能有误，原题库地址：</br>
+	<a href="http://wenku.baidu.com/view/42024b31f111f18583d05ac4.html?pn=51">温柔地点我~</a></br>
+	有bug也不要找我，考完试后才可能会修补。。= =</br>
+	最后大家都能有个好成绩，过一个现充般的暑假。</br>
+	<span style="float:right">-----DennisLeung</span>
+	</div>
+	<footer class="navbar-fixed-bottom">
+		<h4 class="text-muted">designed &amp; powered by DennisLeung</h4>
+	</footer>
+
+</body>
+</html>
